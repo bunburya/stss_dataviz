@@ -32,7 +32,7 @@ app.layout = html.Div(children=[
 
     html.Div(dcc.Markdown(md.introduction)),
     
-    html.Div(dcc.Markdown(md.stss_count)),
+    html.Div(dcc.Markdown(md.stss_count.format(stss_count=cd.stss_count))),
 
     dcc.Graph(
         id='cumul_count',
@@ -273,4 +273,6 @@ app.layout = html.Div(children=[
 ])
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    from sys import argv
+    debug = '--debug' in argv
+    app.run_server(debug=debug)

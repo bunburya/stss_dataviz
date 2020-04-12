@@ -79,7 +79,7 @@ FIRDS data obtained from ESMA's FIRDS files register at https://registers.esma.e
 
 Certain data about issuers obtained from the website of the Global Legal Entity Identifier Foundation (GLEIF) at https://www.gleif.org/en/lei-data/gleif-lei-look-up-api/access-the-api/.
 
-This page was built in the [Python](https://www.python.org/) programming language using [Pandas](https://pandas.pydata.org/) and [Plotly / Dash](https://plotly.com/dash/), among other tools.  The source code used to generate this website can be found [here](https://github.com/bunburya/data_analysis/tree/master/sts) and is made available under the [MIT licence](https://github.com/bunburya/data_analysis/blob/master/sts/LICENCE.txt)."""
+This page was built in the [Python](https://www.python.org/) programming language using [Pandas](https://pandas.pydata.org/) and [Plotly / Dash](https://plotly.com/dash/), among other tools.  The source code used to generate this website can be found [here](https://github.com/bunburya/stss_dataviz) and is made available under the [MIT licence](https://github.com/bunburya/stss_dataviz/blob/master/LICENCE.txt)."""
 
 licence = """[![Image](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
 
