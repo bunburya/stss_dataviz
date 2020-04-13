@@ -111,9 +111,9 @@ def get_colors(values, colormap):
     return [colormap[v] for v in values]
 
 oc_colormap = get_colormap(df['Originator Country'].dropna())
-oc_colormap.update({fd.replace_with_combo(c, fd.iso_to_name): oc_colormap[c] for c in oc_colormap})
+oc_colormap.update({fd.Combo.replace(c, fd.iso_to_name): oc_colormap[c] for c in oc_colormap})
 ic_colormap = get_colormap(df['Issuer Country'].dropna())
-ic_colormap.update({fd.replace_with_combo(c, fd.iso_to_name): ic_colormap[c] for c in ic_colormap})
+ic_colormap.update({fd.Combo.replace(c, fd.iso_to_name): ic_colormap[c] for c in ic_colormap})
 ac_colormap = get_colormap(df['Underlying assets'].dropna())
 currency_colormap = get_colormap(df['Currency'].dropna())
 
@@ -192,7 +192,7 @@ for i, c in enumerate(oc_vs_ic.index):
 oc_vs_ic_dt_style = {'width': str(100 // (len(oc_vs_ic.columns)+1)) + '%'}
 
 # Securitisations by issuer country (excluding those where issuer country == originator country)
-diff_oc_ic = df_pub[~fd.eq_with_combos(df_pub['Issuer Country (full)'], df_pub['Originator Country (full)'])]
+diff_oc_ic = df_pub[~fd.Combo.equals_by_series(df_pub['Issuer Country (full)'], df_pub['Originator Country (full)'])]
 diff_by_ic = fd.flatten_by(diff_oc_ic, 'Issuer Country (full)').groupby('Issuer Country (full)').count()['Unique Securitisation Identifier']
 
 # Securitisations by currency
