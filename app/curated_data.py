@@ -18,8 +18,6 @@ from plotly.express.colors import qualitative as colors
 
 import fetch_data as fd
 
-sts_file = join(fd.data_dir, 'esma33-128-760_securitisations_designated_as_sts_as_from_01_01_2019_regulation_2402_2017.xlsx')
-
 # Get main DataFrames we will be working on.  Save full DataFrame down as
 # a "snapshot" so we don't have to go through the process of searching FIRDS
 # data, etc, every time.

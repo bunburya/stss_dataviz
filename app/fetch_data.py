@@ -15,7 +15,7 @@ from csv import reader
 from typing import List, Set, Tuple, Dict, Collection, Any, Callable, Union, NewType
 from zipfile import ZipFile
 from os import mkdir, listdir
-from os.path import join, exists
+from os.path import join, exists, dirname, realpath
 from io import BytesIO
 
 from lxml import etree
@@ -26,10 +26,10 @@ from pandas import read_excel, ExcelFile, merge, DataFrame, concat
 import pandas as pd
 from numpy import nan
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 zero_time = datetime(2018, 12, 31)
-data_dir = 'data_files'
+data_dir = join(dirname(realpath(__file__)), 'data_files')
 
 def fetch_data(fpath, url, force_dl=False, binary_data=False):
     if (not exists(fpath)) or force_dl:
@@ -355,10 +355,10 @@ class RegisterParser:
             # Split the string, strip away a number of common delimiters
             # from each item in the resulting list, and return only
             # non-empty items.
-            isins = [isin for i in isin_col.split() if (isin := i.strip(';,\t \n'))]
-            for i in isins:
+            isins = list(filter(bool, [i.strip(';,\t \n') for i in isin_col.split()]))
+            for isin in isins:
                 if not self.check_isin(isin):
-                    logging.warn(f'Invalid ISIN: {isin_col} (failed checkdigit test)')
+                    logging.warn(f'Invalid ISIN: {isin} (failed checkdigit test)')
             row['ISIN code'] = Combo(*isins)
         else:
             logging.warn(f'Invalid ISIN: {isin_col} (too short).')
@@ -452,7 +452,7 @@ class RegisterParser:
             # Split the string, strip away a number of common delimiters
             # from each item in the resulting list, and return only
             # non-empty items.
-            return [isin for i in isin_col.split() if (isin := i.strip(';,\t \n'))]
+            return filter(bool, [i.split(';,\t\n') for i in isin_col.split()])
     
     def get_between(self, from_date=zero_time, to_date=None):
         """Takes two datetime objects and returns all rows that are between the two dates (inclusive)."""

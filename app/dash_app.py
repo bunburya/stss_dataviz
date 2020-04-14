@@ -1,7 +1,13 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from os.path import dirname, realpath
+import sys
+sys.path.append(dirname(realpath(__file__)))
+
 from datetime import datetime
+
+import flask
 
 import plotly.express as px
 
@@ -10,20 +16,20 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_table as dt
 
-import dash_markdown as md
-
+import markdown as md
 import curated_data as cd
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+app = flask.Flask(__name__)
+dash_app = dash.Dash(__name__, server=app, url_base_pathname='/dataviz/stss/', external_stylesheets=external_stylesheets)
 
 # TODO:
 # - handle faulty FVC issuer data (no ISIN) by checking against name.
 # - may need to detect and standardise common prefixes
 
-app.layout = html.Div(children=[
+dash_app.layout = html.Div(children=[
     html.H1(
         children='Simple, transparent and standardised securitisations in the European Union',
         style={
@@ -275,4 +281,4 @@ app.layout = html.Div(children=[
 if __name__ == '__main__':
     from sys import argv
     debug = '--debug' in argv
-    app.run_server(debug=debug)
+    app.run(host='0.0.0.0', debug=debug, port=80)
