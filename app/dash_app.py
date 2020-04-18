@@ -19,11 +19,12 @@ import dash_table as dt
 import markdown as md
 import curated_data as cd
 
-
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = flask.Flask(__name__)
-dash_app = dash.Dash(__name__, server=app, url_base_pathname='/dataviz/stss/', external_stylesheets=external_stylesheets)
+
+dash_app = dash.Dash(__name__, server=app, url_base_pathname='/dataviz/stss_intro/', external_stylesheets=external_stylesheets)
+dash_app.title = 'STS securitisations in the EU'
 
 # TODO:
 # - handle faulty FVC issuer data (no ISIN) by checking against name.

@@ -10,7 +10,8 @@ dash = "*"
 lxml = "*"
 requests = "*"
 xlrd = "*"
-uwsgi = "*"
+uWSGI = "*"
+Flask-Track-Usage = "*"
 
 [dev-packages]
 

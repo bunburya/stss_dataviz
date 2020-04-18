@@ -1,8 +1,10 @@
 introduction = """## Introduction
 
-On 1 January 2019, the [Securitisation Regulation](https://eur-lex.europa.eu/legal-content/en/TXT/?uri=celex:32017R2402) came into force in the European Union (EU).  The Securitisation Regulation created a new regulatory regime for securitisations in Europe.  Among other things, it created a new category of securitisations, known as "simple, transparent and standardised" (STS) securitisations.  Securitisations can be classified as STS if they meet certain requirements set out in the Securitisation Regulation (as supplemented by various delegated rules and technical standards).  Investments in STS securitisations receive preferential capital treatment under the EU's capital requirements regulations, reflecting the fact that STS securitisations are considered to be safer than non-STS securitisations.
+On 1 January 2019, the [Securitisation Regulation](https://eur-lex.europa.eu/legal-content/en/TXT/?uri=celex:32017R2402) came into force in the European Union (EU).  The Securitisation Regulation created a new regulatory regime for securitisations in Europe.  The regulation was introduced as part of the European Commission's [action plan to create a Capital Markets Union](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52015DC0468) in the EU.  A key objective of this action plan was the revival of the EU securitisation market, in a safe manner, in order to increase EU companies' access to funding.
 
-Broadly speaking, a "securitisation" is a transaction involving the establishment of a special-purpose company or similar legal entity (often referred to as the *issuer*) to acquire assets (such as loans, mortgages, lease receivables, trade receivables, etc) from one or more third parties (referred to as *originators*).  The issuer funds its acquisition of the assets by issuing debt securities (often referred to as *notes*) to investors, and payments of principal and interest on the notes are in turn funded by the amounts that the issuer receives in respect of the underlying assets.  The Securitisation Regulation applies to securitisations which involve the tranching of credit risk, ie, where the issuer issues different tranches of notes and, in the event that some of the underlying assets underperform, the more "junior" tranches of notes will incur losses before the more "senior" tranches.  
+Among other things, the Securitisation Regulation created a new category of securitisations, known as "simple, transparent and standardised" (STS) securitisations.  Securitisations can be classified as STS if they meet certain requirements set out in the Securitisation Regulation (as supplemented by various delegated rules and technical standards), designed to reduce the complexity and risk associated with such securitisations.  Investments in STS securitisations receive preferential capital treatment under the EU's capital requirements regulations, reflecting the fact that STS securitisations are considered to be safer than non-STS securitisations.
+
+Broadly speaking, a "securitisation" is a transaction involving the establishment of a special-purpose company or similar legal entity (often referred to as the *issuer*) to acquire assets (such as loans, mortgages, lease receivables, trade receivables, etc) from one or more third parties (referred to as *originators*).  The issuer funds its acquisition of the assets by issuing debt securities (often referred to as *notes*) to investors, and payments of principal and interest on the notes are in turn funded by the amounts that the issuer receives in respect of the underlying assets.  The Securitisation Regulation applies to securitisations which involve the tranching of credit risk, eg, where the issuer issues different tranches of notes and, in the event that some of the underlying assets underperform, the more "junior" tranches of notes will incur losses before the more "senior" tranches.  
 
 More information about the Securitisation Regulation and the STS regime can be found on [the website of the European Securities and Markets Authority (ESMA)](https://www.esma.europa.eu/policy-activities/securitisation)
 
@@ -28,7 +30,7 @@ new_by_ac = """The below bar chart demonstrates how many new STS securitisations
 
 stss_by_abcp = """## Asset-backed commercial paper
 
-An asset-backed commercial paper (ABCP) transaction is a particular type of short-term securitisation, where the notes issued by the issuer have a maturity of less than one year.  Typically, ABCP transactions involve issuing short-term notes (known as commercial paper) on a "rolling" basis, ie, issuing new commercial paper to fund the repayment of old commercial paper as it matures.  Due to their short-term nature, the Securitisation Regulation applies slightly different rules to ABCP transactions and programmes than to other securitisations.
+An asset-backed commercial paper (ABCP) transaction is a particular type of short-term securitisation, where the notes issued by the issuer have a maturity of less than one year.  Typically, ABCP transactions involve issuing these short-term notes (known as commercial paper) on a "rolling" basis, ie, issuing new commercial paper to fund the repayment of old commercial paper as it matures.  Due to their short-term nature, the Securitisation Regulation applies slightly different rules to ABCP transactions and programmes than to other securitisations.
 
 As you can see, the majority of STS securitisations in this time period have been non-ABCP transactions."""
 
@@ -45,9 +47,9 @@ Because of the limited amount of information available about private STS securit
 
 stss_by_oc = """## Originator countries
 
-Below you can see a pie chart (and below that, a "heatmap" of Europe) showing how many STS securitisations involved originators from each country.  The UK tops this list, with about a third of all STS securitisations involving an originator from that country."""
+Below you can see a pie chart (and below that, a "choropleth" map of Europe) showing how many STS securitisations involved originators from each country.  The UK tops this list, with about a third of all STS securitisations involving an originator from that country."""
 
-oc_vs_gdp = """If we plot the number of securitisations involving originators from a country against that country's GDP, we can see a moderate positive correlation between the size of a country's economy and the number of STS securitisations involving originators from that country (Pearson correlation coefficient of **{corr}**).  The Netherlands and the United Kingdom stand out as having an unusually large number of STS securitisations relative to their GDP."""
+oc_vs_gdp = """If we plot the number of securitisations involving originators from a country against that country's GDP, we can see a strong positive correlation between the size of a country's economy and the number of STS securitisations involving originators from that country (Pearson correlation coefficient of **{corr}**).  The Netherlands and the United Kingdom stand out as having an unusually large number of STS securitisations relative to their GDP."""
 
 ac_by_oc = """Below you will find a bar chart showing what asset classes were securitised by originators for each country.  You can see, for example, that in the UK and the Netherlands, residential mortgage securitisations are the most common, whereas in Germany, auto loans and leases are the most commonly securitised asset class."""
 
@@ -73,14 +75,14 @@ Data on STS securitisations obtained from ESMA's webpage at https://www.esma.eur
 
 GDP data obtained from Eurostat's website at https://ec.europa.eu/eurostat/databrowser/view/tec00001/default/table?lang=en (published by the EU under a [CC BY 4.0 licence](https://creativecommons.org/licenses/by/4.0/#)).
 
-Geodata for the heatmap obtained from Eurostat's website at https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/countries.  © EuroGeographics for the administrative boundaries.
+Geodata for the choropleth map obtained from Eurostat's website at https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/countries.  © EuroGeographics for the administrative boundaries.
 
 FIRDS data obtained from ESMA's FIRDS files register at https://registers.esma.europa.eu/publication/searchRegister?core=esma_registers_firds_files.
 
 Certain data about issuers obtained from the website of the Global Legal Entity Identifier Foundation (GLEIF) at https://www.gleif.org/en/lei-data/gleif-lei-look-up-api/access-the-api/.
 
-This page was built in the [Python](https://www.python.org/) programming language using [Pandas](https://pandas.pydata.org/) and [Plotly / Dash](https://plotly.com/dash/), among other tools.  The source code used to generate this website can be found [here](https://github.com/bunburya/stss_dataviz) and is made available under the [MIT licence](https://github.com/bunburya/stss_dataviz/blob/master/LICENCE.txt)."""
+This page was built in the [Python](https://www.python.org/) programming language using [Pandas](https://pandas.pydata.org/) and [Plotly / Dash](https://plotly.com/dash/), among other tools.  The source code used to generate this page can be found [here](https://github.com/bunburya/stss_dataviz) and is made available under the [MIT licence](https://github.com/bunburya/stss_dataviz/blob/master/LICENCE.txt)."""
 
 licence = """[![Image](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
 
-This page © 2020 Alan Bunbury.  This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/)."""
+This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/)."""
